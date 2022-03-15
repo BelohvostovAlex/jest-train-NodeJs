@@ -17,3 +17,4 @@ describe('validation', () => {
         expect(validateValue(-1)).toBe(false)
     })
 });
+

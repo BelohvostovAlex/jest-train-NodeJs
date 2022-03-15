@@ -1,16 +1,16 @@
 const square = require('./square')
 
 describe('squareVal', () => {
+    let spyMathPow
     beforeEach(() => {
-
+        spyMathPow = jest.spyOn(Math, 'pow')
     })
     test('2', () => {
-        const spyMathPow = jest.spyOn(Math, 'pow')
         square(2)
         expect(spyMathPow).toBeCalledTimes(1)
+        expect(square(2)).toBe(4)
     })
     test('1', () => {
-        const spyMathPow = jest.spyOn(Math, 'pow')
         square(1)
         expect(spyMathPow).toBeCalledTimes(0)
     })
